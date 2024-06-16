@@ -10,7 +10,8 @@ tags = {
     from_port       = 27017
     to_port         = 27017
     protocol        = "tcp"
-    cidr_blocks     = [data.terraform_remote_state.vpc.outputs.VPC_ID, data.terraform_remote_state.vpc.outputs.DEFAULT_VPC_CIDR]
+    # cidr_blocks     = [data.terraform_remote_state.vpc.outputs.VPC_ID, data.terraform_remote_state.vpc.outputs.DEFAULT_VPC_CIDR]
+    cidr_blocks     = [data.terraform_remote_state.vpc.outputs.VPC_ID]
 
   }
 
