@@ -20,3 +20,11 @@ resource "aws_docdb_subnet_group" "docdb" {
         Name = "roboshop-${var.ENV}-docdb"
   }
 }
+
+#create instance and add it on docdb cluster
+resource "aws_docdb_cluster_instance" "cluster_instances" {
+  count              = var.DOCDB_INSTANCE_COUNT
+  identifier         = "roboshop-${var.ENV}-docdb"
+  cluster_identifier = aws_docdb_cluster.docdb.id
+  instance_class     = var.DOCDB_INSTANCE_TYPE
+}
