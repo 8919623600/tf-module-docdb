@@ -1,7 +1,7 @@
 # provisions document db cluster
 resource "aws_docdb_cluster" "docdb" {
   cluster_identifier      = "roboshop-${var.ENV}-docdb"
-  engine                  = docdb
+  engine                  = "docdb"
   master_username         = admin1
   master_password         = RoboShop1 
 #   backup_retention_period = 5             # In Prod we would enable this 
