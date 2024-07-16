@@ -17,9 +17,9 @@ resource "aws_docdb_subnet_group" "docdb" {
   subnet_ids              = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
   
 
-  # tags = {
-  #       Name = "roboshop-${var.ENV}-docdb"
-  # }
+  tags = {
+        Name = "roboshop-${var.ENV}-docdb"
+  }
 }
 
 #create instance and add it on docdb cluster
